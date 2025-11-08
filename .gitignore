@@ -1,0 +1,102 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# Virtual environments
+.env/
+venv/
+.venv/
+ENV/
+env/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Node / frontend
+frontend/node_modules/
+frontend/.parcel-cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Data & large assets (keep raw dataset paths if not needed on repo)
+uploads/
+backend/uploads/
+instance/
+**/uploads/
+
+# Machine learning models / weights
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+*.pb
+models/
+ml_models/electrical_model/__pycache__/
+ml_models/image_model/
+ml_models/fusion_model/
+
+# Cache & temp
+*.cache
+*.tmp
+*.bak
+
+# Environment variables / secrets
+*.env
+.env.*
+secret.json
+
+# Reports generated
+report_outputs/
+backend/report_generator/output/
+
+# Logs
+*.log
+log/
+logs/
+**/logging_config.py
+
+# Ignore large dataset directories if not essential
+/data/counterfeit_detection/dataset/
+/data/counterfeit_detection/organized/
+
+# SQLite or other local DB
+*.db
+*.sqlite3
+backend/database/*.db
+
+# Images from tests
+screenshots/
+
+# Coverage / test artifacts
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Compiled TS/JS build outputs (if built separately)
+frontend/build/
+frontend/dist/
+
+# Arduino compiled artifacts
+hardware/arduino/*.hex
+hardware/arduino/build/
+
+# Streamlit
+.streamlit/

@@ -1,0 +1,44 @@
+# Core Flask dependencies
+Flask==2.3.3
+Flask-SQLAlchemy==3.0.5
+Flask-JWT-Extended==4.5.3
+Flask-CORS==4.0.0
+Werkzeug==2.3.7
+
+# Database dependencies
+SQLAlchemy==2.0.23
+psycopg2-binary==2.9.7
+alembic==1.12.1
+
+# Machine Learning dependencies
+torch==2.1.0
+torchvision==0.16.0
+scikit-learn==1.3.2
+numpy==1.24.3
+pandas==2.1.3
+
+# Image processing
+Pillow==10.0.1
+opencv-python==4.8.1.78
+
+# Hardware communication
+pyserial==3.5
+
+# Report generation
+reportlab==4.0.6
+
+# Data processing and utilities
+requests==2.31.0
+python-dotenv==1.0.0
+colorama==0.4.6
+
+# Development dependencies
+pytest==7.4.3
+pytest-flask==1.3.0
+black==23.11.0
+flake8==6.1.0
+
+# Optional dependencies for enhanced functionality
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.17.0
