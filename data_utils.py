@@ -180,29 +180,32 @@ def create_dataloaders(data_config: Dict, train_config: Dict) -> Dict[str, DataL
         class_to_idx=train_dataset.class_to_idx
     )
     
-    # Create data loaders
+    # Create data loaders (handle empty datasets)
+    batch_size = train_config['batch_size'] if len(train_dataset) > 0 else 1
+    num_workers = 4 if len(train_dataset) > 0 else 0
+    
     train_loader = DataLoader(
         train_dataset,
-        batch_size=train_config['batch_size'],
-        shuffle=True,
-        num_workers=4,
-        pin_memory=True
+        batch_size=batch_size,
+        shuffle=True if len(train_dataset) > 0 else False,
+        num_workers=num_workers,
+        pin_memory=True if len(train_dataset) > 0 else False
     )
     
     val_loader = DataLoader(
         val_dataset,
-        batch_size=train_config['batch_size'],
+        batch_size=batch_size,
         shuffle=False,
-        num_workers=4,
-        pin_memory=True
+        num_workers=num_workers,
+        pin_memory=True if len(val_dataset) > 0 else False
     )
     
     test_loader = DataLoader(
         test_dataset,
-        batch_size=train_config['batch_size'],
+        batch_size=batch_size,
         shuffle=False,
-        num_workers=4,
-        pin_memory=True
+        num_workers=num_workers,
+        pin_memory=True if len(test_dataset) > 0 else False
     )
     
     return {
