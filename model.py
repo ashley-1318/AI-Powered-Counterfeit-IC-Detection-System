@@ -49,18 +49,20 @@ class CounterfeitICDetector(nn.Module):
         
     def _load_backbone(self) -> nn.Module:
         """Load the pretrained backbone model"""
+        weights = 'DEFAULT' if self.pretrained else None
+        
         if self.architecture == 'resnet50':
-            model = models.resnet50(pretrained=self.pretrained)
+            model = models.resnet50(weights=weights)
             # Remove the final fully connected layer
             model = nn.Sequential(*list(model.children())[:-1])
         elif self.architecture == 'resnet101':
-            model = models.resnet101(pretrained=self.pretrained)
+            model = models.resnet101(weights=weights)
             model = nn.Sequential(*list(model.children())[:-1])
         elif self.architecture == 'efficientnet_b0':
-            model = models.efficientnet_b0(pretrained=self.pretrained)
+            model = models.efficientnet_b0(weights=weights)
             model = nn.Sequential(*list(model.children())[:-1])
         elif self.architecture == 'efficientnet_b4':
-            model = models.efficientnet_b4(pretrained=self.pretrained)
+            model = models.efficientnet_b4(weights=weights)
             model = nn.Sequential(*list(model.children())[:-1])
         else:
             raise ValueError(f"Unsupported architecture: {self.architecture}")
